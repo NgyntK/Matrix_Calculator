@@ -18,7 +18,7 @@ The goal is to create a program capable of performing various matrix calculation
 - [ ] Linear system solving
 
 
-## 📚 Learning objectives
+## Learning objectives
 
 - Improve Python programming skills.
 - Understand and implement linear algebra algorithms.
@@ -30,6 +30,6 @@ The goal is to create a program capable of performing various matrix calculation
 Currently under development.
 New features and improvements will be added progressively.
 
-## 👤 Author
+## Author
 
-KELLY
+NGUYEN-TU KELLY
