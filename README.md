@@ -3,7 +3,7 @@ A Python-based project for performing mathematical matrix operations.
 
 ## About the project
 
-MatrixToolkit is a personal project developed in Python to practice programming, algorithms and linear algebra.
+Matrix_Calculator is a personal project developed in Python to practice programming, algorithms and linear algebra.
 The goal is to create a program capable of performing various matrix calculations through custom implementations.
 
 ## Features
