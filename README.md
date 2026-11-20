@@ -6,6 +6,24 @@ A Python-based project for performing mathematical matrix operations.
 Matrix_Calculator is a personal project developed in Python to practice programming, algorithms and linear algebra.
 The goal is to create a program capable of performing various matrix calculations through custom implementations.
 
+## Project plan
+
+Matrix_Calcultor
+│
+├── src/
+│   ├── matrix.py
+│   ├── Addition.py
+│   ├── multiplication.py
+│   └── ...
+├── tests/
+│   ├── test_matrix.py
+│   ├── test_Addition.py
+│   └── test_multiplication.py
+├── examples/
+│   └── ...
+├── docs/
+└── README.md
+
 ## Features
 
 - [ ] Matrix addition
@@ -14,8 +32,6 @@ The goal is to create a program capable of performing various matrix calculation
 - [ ] Matrix transpose
 - [ ] Determinant calculation
 - [ ] Matrix inverse
-- [ ] Matrix rank calculation
-- [ ] Linear system solving
 
 
 ## Learning objectives
