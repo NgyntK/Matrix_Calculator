@@ -8,7 +8,7 @@ The goal is to create a program capable of performing various matrix calculation
 
 ## Project plan
 
-Matrix-Programming/  
+Matrix_Calculator/  
 │  
 ├── src/  
 │   ├── matrix.py  
