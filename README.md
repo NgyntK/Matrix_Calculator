@@ -9,20 +9,19 @@ The goal is to create a program capable of performing various matrix calculation
 ## Project plan
 
 Matrix_Calcultor
-│
-├── src/
-│   ├── matrix.py
-│   ├── Addition.py
-│   ├── multiplication.py
-│   └── ...
-├── tests/
-│   ├── test_matrix.py
-│   ├── test_Addition.py
-│   └── test_multiplication.py
-├── examples/
-│   └── ...
-├── docs/
-└── README.md
+src/
+    matrix.py
+    Addition.py
+    multiplication.py
+    ...
+tests/
+    test_matrix.py
+    test_Addition.py
+    test_multiplication.py
+examples/
+    ...
+docs/
+README.md
 
 ## Features
 
