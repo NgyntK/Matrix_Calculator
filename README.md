@@ -51,4 +51,4 @@ New features and improvements will be added progressively.
 
 ## Author
 
-NGUYEN-TU KELLY
+NK
