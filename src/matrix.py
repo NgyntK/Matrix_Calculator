@@ -14,7 +14,11 @@ class Matrix:
 
     @property
     def nb_colomns(self):
-        return len(self.data[0]) 
+        if self.data == [] :
+            return 0
+        else :
+            return len(self.data[0]) 
+
 
     @property
     def is_zero(self):
@@ -26,7 +30,7 @@ class Matrix:
 
     @property
     def is_square(self): 
-        return len(self.data) == len(self.data[0])
+        return self.nb_lines == self.nb_colomns
 
     @property
     def is_empty(self):
@@ -48,11 +52,17 @@ class Matrix:
     
     @classmethod
     def zero(cls, nb_lines , nb_colomns ):
+        if not isinstance(nb_lines, int) or not isinstance(nb_colomns, int):
+            raise TypeError("numbers of lines and colomns must be integers")
+
+        if nb_lines < 0 or nb_colomns < 0:
+            raise ValueError("Dimensions cannot be negative")
+        
         return cls([[ 0 for c in range(nb_colomns)] for l in range(nb_lines)])
 
     @classmethod
-    def identity(cls, nb_lines_colomns ):
-            data = [[ 0 for c in range(nb_lines_colomns) ] for l in range(nb_lines_colomns) ]
+    def identity(cls, nb_lines_colomns):
+            data = cls.zero(nb_lines_colomns,nb_lines_colomns).data
             for i in range(nb_lines_colomns):
                  data[i][i] = 1
             return cls(data)
