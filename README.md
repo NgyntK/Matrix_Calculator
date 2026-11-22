@@ -43,6 +43,7 @@ Matrix_Calculator/
 - Understand and implement linear algebra algorithms.
 - Practice algorithmic thinking.
 - Learn project organization and version control with Git.
+- Do not use Python modules
 
 ## Project status
 
