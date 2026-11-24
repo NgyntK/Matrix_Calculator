@@ -15,8 +15,9 @@ class fraction :
         A denominator equal to zero is not allowed.
         """
 
-        if not isinstance(numerator, int) or (denominator is not None and not isinstance(denominator, int)):
+        if not (isinstance(numerator, int) and (denominator is None or isinstance(denominator, int))):
             raise TypeError("Numerator and denominator must be integers")
+        
         self.numerator = numerator
 
         if denominator is None :
@@ -41,19 +42,15 @@ class fraction :
 
         a,b = self.numerator , self.denominator
 
-        if a < 0 and b < 0 : # (-a/-b) = a/b
-            a,b = abs(a) , abs(b)
-            return fraction(a,b).simplify()
-        
-        elif a > 0 and b < 0 : # By convention, the “-” is placed in the numerator
-            a,b = -a , abs(b)
-            return fraction(a,b).simplify()
+        if a == 0 :
+            return fraction(0)
 
-        elif self.gcd() == 1 : # the fraction cannot be simplified
-            return self
-        
-        if self.gcd() != 1 : # the fraction can be simplified
-            return fraction(a//self.gcd() , b//self.gcd() )
+        if b < 0 : # By convention, the “-” is placed in the numerator
+            a,b = -a , -b
+
+        divisor = self.gcd()
+
+        return fraction(a//divisor , b//divisor )
 
 
     def gcd(self): 
@@ -75,6 +72,17 @@ class fraction :
             a, b = b, a
 
         return fraction(a, b-a).gcd()
+
+    def __eq__(self, other):
+
+        # Comparing two fractions
+
+        if not isinstance(other, fraction):
+            return False
+
+        return (
+            self.numerator * other.denominator == other.numerator * self.denominator
+        )
 
     def add(self,other) : 
 

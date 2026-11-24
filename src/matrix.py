@@ -1,12 +1,42 @@
+# ========================================================================
+# The coefficients of a matrix are fractions. 
+# The `Fraction` class will then be responsible for all arithmetic operations, 
+# while the `Matrix` class can focus exclusively on matrix operations.
+# ========================================================================
+
+from src.fraction import fraction
+
 class Matrix:
 
     def __init__(self, data):
-        self.data = data
 
-    # ========================================================================
-    # Generating a zero matrix with a user-defined size in used in certain matrix operations,
-    # such as matrix multiplication of the generation of identity matrices.
-    # ========================================================================
+        # Checking the structure of the matrix
+
+        if not isinstance(data, list):
+            raise TypeError("Matrix data must be a list of lists")
+
+        for row in data:
+            if not isinstance(row, list):
+                raise TypeError("Each row must be a list")
+
+        if data and any(len(row) != len(data[0]) for row in data):
+            raise ValueError("All rows must have the same length")
+
+        for row in data:
+            for value in row:
+                if not isinstance(value, (int, fraction)):
+                    raise TypeError(
+                        "Matrix coefficients must be integers or fractions"
+                    )
+
+        # Converting all coefficients to fractions
+        self.data = [
+            [
+                value if isinstance(value, fraction) else fraction(value)
+                for value in row
+            ]
+            for row in data
+        ]
 
     @property
     def nb_lines(self):
@@ -24,7 +54,7 @@ class Matrix:
     def is_zero(self):
         for n in range(self.nb_lines) :
             for m in range(self.nb_colomns) :
-                if self.data[n][m] != 0 :
+                if self.data[n][m] != fraction(0) :
                     return False
         return True
 
@@ -44,9 +74,9 @@ class Matrix:
             return False
         for n in range(self.nb_lines) :
             for m in range(self.nb_colomns) :
-                if n == m and self.data[n][m] != 1 :
+                if n == m and self.data[n][m] != fraction(1) :
                     return False
-                elif n != m and self.data[n][m] != 0 :
+                elif n != m and self.data[n][m] != fraction(0) :
                     return False
         return True
     
@@ -64,7 +94,7 @@ class Matrix:
     def identity(cls, nb_lines_colomns):
             data = cls.zero(nb_lines_colomns,nb_lines_colomns).data
             for i in range(nb_lines_colomns):
-                 data[i][i] = 1
+                 data[i][i] = fraction(1)
             return cls(data)
 
     def __repr__(self):
