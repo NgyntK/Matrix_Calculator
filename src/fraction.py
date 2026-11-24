@@ -1,10 +1,10 @@
 #===============================================
 # The coefficients of a matrix are fractions. 
-#The `Fraction` class will then be responsible for all arithmetic operations, 
+# The `Fraction` class will then be responsible for all arithmetic operations, 
 # while the `Matrix` class can focus exclusively on matrix operations.
 #===============================================
 
-class fraction :
+class Fraction :
 
     def __init__(self, numerator, denominator = None ):
 
@@ -43,14 +43,14 @@ class fraction :
         a,b = self.numerator , self.denominator
 
         if a == 0 :
-            return fraction(0)
+            return Fraction(0)
 
         if b < 0 : # By convention, the “-” is placed in the numerator
             a,b = -a , -b
 
         divisor = self.gcd()
 
-        return fraction(a//divisor , b//divisor )
+        return Fraction(a//divisor , b//divisor )
 
 
     def gcd(self): 
@@ -71,13 +71,13 @@ class fraction :
         if a > b:
             a, b = b, a
 
-        return fraction(a, b-a).gcd()
+        return Fraction(a, b-a).gcd()
 
     def __eq__(self, other):
 
         # Comparing two fractions
 
-        if not isinstance(other, fraction):
+        if not isinstance(other, Fraction):
             return False
 
         return (
@@ -90,12 +90,12 @@ class fraction :
         Add two fractions.
         """
 
-        if not (isinstance(self , fraction) and isinstance(other,fraction)) :
+        if not (isinstance(self , Fraction) and isinstance(other,Fraction)) :
             raise TypeError("variables must be fractions")
         a,b = self.numerator , self.denominator
         c,d = other.numerator , other.denominator
         
-        return fraction( a*d + c*b , b*d ).simplify()
+        return Fraction( a*d + c*b , b*d ).simplify()
 
     def sub(self,other) : 
     
@@ -103,12 +103,12 @@ class fraction :
         subtract two fractions
         """
     
-        if not (isinstance(self , fraction) and isinstance(other,fraction)) :
+        if not (isinstance(self , Fraction) and isinstance(other,Fraction)) :
             raise TypeError("variables must be fractions")
         a,b = self.numerator , self.denominator
         c,d = other.numerator , other.denominator
             
-        return fraction( a*d - c*b , b*d ).simplify()
+        return Fraction( a*d - c*b , b*d ).simplify()
 
 
     def mult(self,other) : 
@@ -117,12 +117,12 @@ class fraction :
         multiplying two fractions
         """
         
-        if not ( isinstance(self,fraction) and isinstance(other,fraction)) :
+        if not ( isinstance(self,Fraction) and isinstance(other,Fraction)) :
             raise TypeError("variables must be fractions")
         a,b = self.numerator , self.denominator
         c,d = other.numerator , other.denominator
                 
-        return fraction( a*c , b*d ).simplify()
+        return Fraction( a*c , b*d ).simplify()
 
 
     def __repr__(self):

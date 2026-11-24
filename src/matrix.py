@@ -5,7 +5,7 @@
 # while the `Matrix` class can focus exclusively on matrix operations.
 # ========================================================================
 
-from src.fraction import fraction
+from src.fraction import Fraction
 
 class Matrix:
 
@@ -40,7 +40,7 @@ class Matrix:
         """
         for row in data:
             for value in row:
-                if not isinstance(value, (int, fraction)):
+                if not isinstance(value, (int, Fraction)):
                     raise TypeError(
                         "Matrix coefficients must be integers or fractions"
                     )
@@ -55,7 +55,7 @@ class Matrix:
         
         self.data = [
             [
-                value if isinstance(value, fraction) else fraction(value)
+                value if isinstance(value, Fraction) else Fraction(value)
                 for value in row
             ]
             for row in data
@@ -79,7 +79,7 @@ class Matrix:
     def is_zero(self):
         for n in range(self.nb_lines) :
             for m in range(self.nb_colomns) :
-                if self.data[n][m] != fraction(0) :
+                if self.data[n][m] != Fraction(0) :
                     return False
         return True
 
@@ -108,9 +108,9 @@ class Matrix:
             return False
         for n in range(self.nb_lines) :
             for m in range(self.nb_colomns) :
-                if n == m and self.data[n][m] != fraction(1) :
+                if n == m and self.data[n][m] != Fraction(1) :
                     return False
-                elif n != m and self.data[n][m] != fraction(0) :
+                elif n != m and self.data[n][m] != Fraction(0) :
                     return False
         return True
 
@@ -137,7 +137,7 @@ class Matrix:
     def identity(cls, nb_lines_colomns):
             data = cls.zero(nb_lines_colomns,nb_lines_colomns).data
             for i in range(nb_lines_colomns):
-                 data[i][i] = fraction(1)
+                 data[i][i] = Fraction(1)
             return cls(data)
 
     def __repr__(self):
