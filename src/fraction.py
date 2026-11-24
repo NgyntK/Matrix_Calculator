@@ -89,6 +89,33 @@ class fraction :
         
         return fraction( a*d + c*b , b*d ).simplify()
 
+    def sub(self,other) : 
+    
+        """
+        subtract two fractions
+        """
+    
+        if not (isinstance(self , fraction) and isinstance(other,fraction)) :
+            raise TypeError("variables must be fractions")
+        a,b = self.numerator , self.denominator
+        c,d = other.numerator , other.denominator
+            
+        return fraction( a*d - c*b , b*d ).simplify()
+
+
+    def mult(self,other) : 
+        
+        """
+        multiplying two fractions
+        """
+        
+        if not ( isinstance(self,fraction) and isinstance(other,fraction)) :
+            raise TypeError("variables must be fractions")
+        a,b = self.numerator , self.denominator
+        c,d = other.numerator , other.denominator
+                
+        return fraction( a*c , b*d ).simplify()
+
 
     def __repr__(self):
         
@@ -99,7 +126,7 @@ class fraction :
         represented as an integer. Otherwise, it is represented
         in the form numerator/denominator.
         """
-        
+
         if self.denominator == 1 :
             return str(self.numerator)
         return f"{self.numerator}/{self.denominator}"
