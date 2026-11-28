@@ -3,9 +3,8 @@
 # A Python project for matrix calculations
 # ==========================================
 
-from matrice.matrix import Matrix
-from fraction.fraction import Fraction
-from matrice.addition import addition
+from src.fraction.fraction import Fraction
+from src.matrix.matrix import Matrix
 
 def main():
     print("================================")
@@ -30,14 +29,12 @@ def main():
         print(matrix_test)
 
         print("Nombre de lignes :", matrix_test.nb_lines)
-        print("Nombre de colonnes :", matrix_test.nb_colomns)
+        print("Nombre de colonnes :", matrix_test.nb_columns)
         print("La matrice est-elle nulle ?", matrix_test.is_zero)
         print("La matrice est-elle vide ?", matrix_test.is_empty)
         print("La matrice est-elle carrée ?", matrix_test.is_square)
         print("La matrice est-elle identité ?", matrix_test.is_identity)
-
-    E = addition(B,B)
-    print(E)
+   
 
 
 if __name__ == "__main__":

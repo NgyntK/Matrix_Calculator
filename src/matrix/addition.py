@@ -1,0 +1,15 @@
+from src.matrix.matrix import Matrix
+
+def addition(A,B) :
+    if not isinstance(A,Matrix) or not isinstance(B,Matrix) :
+        raise TypeError("You need to provide matrices")
+    if A.nb_lines != B.nb_lines or A.nb_columns != B.nb_columns :
+        raise ValueError("The matrices must have the same dimensions.")
+
+    result = Matrix.zero(A.nb_lines,A.nb_columns)
+
+    for n in range(A.nb_lines) :
+        for m in range(A.nb_columns) :
+            result.data[n][m] = (A.data[n][m]).add(B.data[n][m])
+
+    return result
