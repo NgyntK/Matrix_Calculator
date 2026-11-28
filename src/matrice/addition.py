@@ -1,5 +1,5 @@
-from src.matrix import Matrix
-from src.fraction import Fraction
+from matrice.matrix import Matrix
+from fraction.fraction import Fraction
 
 def addition(A,B) :
     if not isinstance(A,Matrix) or not isinstance(B,Matrix) :

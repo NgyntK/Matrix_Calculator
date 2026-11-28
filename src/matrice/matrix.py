@@ -5,7 +5,7 @@
 # while the `Matrix` class can focus exclusively on matrix operations.
 # ========================================================================
 
-from src.fraction import Fraction
+from fraction.fraction import Fraction
 
 class Matrix:
 

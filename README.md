@@ -4,24 +4,44 @@ A Python-based project for performing mathematical matrix operations.
 ## About the project
 
 Matrix_Calculator is a personal project developed in Python to practice programming, algorithms and linear algebra.
-The goal is to create a program capable of performing various matrix calculations through custom implementations.
+The goal is to create a program capable of performing various matrix calculations through custom implementations. They will be able to write out all the steps in the calculation.
 
 ## Project plan
 
 Matrix_Calculator/  
 │  
 ├── src/  
-│   ├── matrix.py  
-│   ├── Addition.py  
-│   ├── multiplication.py  
-│   └── ...  
+│   ├── matrice/
+│   │   ├── __init__.py
+│   │   ├── matrix.py
+│   │   ├── addition.py
+│   │   ├── multiplication.py
+│   │   ├── transpose.py
+│   │   ├── determinant.py
+│   │   └── inverse.py
+│   │
+│   ├── fraction/
+│   │   ├── __init__.py
+│   │   └── fraction.py
+│   │
+│   └── presentation/
+│       ├── __init__.py
+│       ├── formatter.py
+│       └── steps.py
+│
 ├── tests/  
-│   ├── test_matrix.py  
-│   ├── test_Addition.py  
-│   ├── test_multiplication.py  
-│   └── ...  
+│   ├── matrice/
+│   │   ├── test_matrix.py  
+│   │   ├── test_Addition.py  
+│   │   ├── ... 
+│   │   └── test_multiplication.py  
+│   │
+│   ├── fraction/
+│   │
+│   └── presentation/
+│   
 ├── examples/  
-│   └── ...  
+│   
 ├── docs/  
 ├── main.py  
 └── README.md  
@@ -35,6 +55,8 @@ Matrix_Calculator/
 - [ ] Matrix transpose
 - [ ] Determinant calculation
 - [ ] Matrix inverse
+    - Gauss's method
+    - the inverse method using the comator
 
 
 ## Learning objectives

@@ -3,7 +3,9 @@
 # A Python project for matrix calculations
 # ==========================================
 
-from src.matrix import Matrix
+from matrice.matrix import Matrix
+from fraction.fraction import Fraction
+from matrice.addition import addition
 
 def main():
     print("================================")
@@ -11,7 +13,7 @@ def main():
     print("================================")
 
     A = Matrix([[1,2],[3,4]])
-    B = Matrix([[1,2,3],[4,5,6]])
+    B = Matrix([[1, Fraction(1,2) ,3],[4,5,6]])
     C = Matrix.zero(4,2)
     D = Matrix.identity(3)
 
@@ -33,6 +35,9 @@ def main():
         print("La matrice est-elle vide ?", matrix_test.is_empty)
         print("La matrice est-elle carrée ?", matrix_test.is_square)
         print("La matrice est-elle identité ?", matrix_test.is_identity)
+
+    E = addition(B,B)
+    print(E)
 
 
 if __name__ == "__main__":

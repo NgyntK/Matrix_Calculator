@@ -1,4 +1,4 @@
-from src.matrix import Matrix
+from matrice.matrix import Matrix
 
 
 def test_matrix_creation():
