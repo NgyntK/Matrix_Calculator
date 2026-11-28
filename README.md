@@ -11,35 +11,35 @@ The goal is to create a program capable of performing various matrix calculation
 Matrix_Calculator/  
 │  
 ├── src/  
-│   ├── matrice/
-│   │   ├── __init__.py
-│   │   ├── matrix.py
-│   │   ├── addition.py
-│   │   ├── multiplication.py
-│   │   ├── transpose.py
-│   │   ├── determinant.py
-│   │   └── inverse.py
-│   │
-│   ├── fraction/
-│   │   ├── __init__.py
-│   │   └── fraction.py
-│   │
-│   └── presentation/
-│       ├── __init__.py
-│       ├── formatter.py
-│       └── steps.py
-│
-├── tests/  
-│   ├── matrice/
+│   ├── matrice/  
+│   │   ├── __init__.py  
+│   │   ├── matrix.py  
+│   │   ├── addition.py  
+│   │   ├── multiplication.py  
+│   │   ├── transpose.py  
+│   │   ├── determinant.py  
+│   │   └── inverse.py  
+│   │  
+│   ├── fraction/  
+│   │   ├── __init__.py  
+│   │   └── fraction.py  
+│   │  
+│   └── presentation/  
+│       ├── __init__.py  
+│       ├── formatter.py  
+│       └── steps.py  
+│  
+├── tests/    
+│   ├── matrice/  
 │   │   ├── test_matrix.py  
 │   │   ├── test_Addition.py  
-│   │   ├── ... 
+│   │   ├── ...  
 │   │   └── test_multiplication.py  
-│   │
-│   ├── fraction/
-│   │
-│   └── presentation/
-│   
+│   │  
+│   ├── fraction/  
+│   │  
+│   └── presentation/  
+│  
 ├── examples/  
 │   
 ├── docs/  
