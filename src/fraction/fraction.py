@@ -75,13 +75,15 @@ class Fraction :
 
     def __eq__(self, other):
 
-        # Comparing two fractions
+        if isinstance(other, int):
+            other = Fraction(other)
 
         if not isinstance(other, Fraction):
             return False
 
         return (
-            self.numerator * other.denominator == other.numerator * self.denominator
+            self.numerator * other.denominator
+            == other.numerator * self.denominator
         )
 
     def add(self,other) : 
@@ -90,7 +92,7 @@ class Fraction :
         Add two fractions.
         """
 
-        if not (isinstance(self , Fraction) and isinstance(other,Fraction)) :
+        if not (isinstance(self , Fraction) and isinstance(other, Fraction)) :
             raise TypeError("variables must be fractions")
         a,b = self.numerator , self.denominator
         c,d = other.numerator , other.denominator
